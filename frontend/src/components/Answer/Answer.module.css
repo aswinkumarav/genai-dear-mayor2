@@ -10,8 +10,8 @@
 }
 
 .answerText {
-    font-style: normal;
-    font-weight: 400;
+    /* font-style: normal; */
+    /* font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #323130;
@@ -19,11 +19,11 @@
     order: 1;
     align-self: stretch;
     flex-grow: 0;
-    margin: 11px;
+    margin: 11px; */
     white-space: normal;
     word-wrap: break-word;
-    max-width: 800px;
-    overflow-x: auto;
+    /* max-width: 800px;
+    overflow-x: auto; */
 }
 
 .answerHeader {

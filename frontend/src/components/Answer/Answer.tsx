@@ -216,7 +216,15 @@ export const Answer = ({
                     <LaunchChatAva />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <div className="content">{SANITIZE_ANSWER ? DOMPurify.sanitize(parsedAnswer.markdownFormatText, { ALLOWED_TAGS: XSSAllowTags }) : parsedAnswer.markdownFormatText}</div>
+                    <div className="content">
+                    <ReactMarkdown
+                                linkTarget="_blank"
+                                remarkPlugins={[remarkGfm, supersub]}
+                                children={SANITIZE_ANSWER ? DOMPurify.sanitize(parsedAnswer.markdownFormatText, { ALLOWED_TAGS: XSSAllowTags }) : parsedAnswer.markdownFormatText}
+                                className={styles.answerText}
+                                components={components}
+                            />
+                    </div>
                     {!!parsedAnswer.citations.length && (
                         <div className={`resources flex flex-col gap-2.5 transition-opacity duration-1000 ${!isLoading ? 'opacity-100 h-auto overflow-auto' : 'opacity-0 h-0 overflow-hidden'}`}>
                             <div>
