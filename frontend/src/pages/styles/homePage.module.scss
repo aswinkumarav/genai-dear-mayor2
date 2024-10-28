@@ -1,0 +1,1039 @@
+.homePageContainer {
+    background: url("../../assets/images/newBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    height: calc(100vh - 55vh);
+    width: 100%;
+  }
+  
+  .mobileContainer {
+    display: none;
+  }
+  
+  .carouselContainer {
+    .carouselItem {
+    overflow: hidden;
+    border-radius: 5px;
+    }
+    .imageOne {
+      background-image: url("../../assets/images/newSlideTwo.jpg");
+      width: 100%;
+      height: 171px;
+      background-repeat: no-repeat;
+      background-position: top center;
+    }
+    .imageTwo {
+      background-image: url("../../assets/images/newSlideOne.jpg");
+      width: 100%;
+      height: 171px;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+    .imageThree {
+      background-image: url("../../../assets/images/accessBanner.jpg");
+      width: 100%;
+      height: 171px;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+  }
+  
+  .customCarouselBannertxt {
+    text-align: left;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: 24px;
+    padding-left: 50px;
+    h5 {
+      font: normal normal 300 38px/20px Roboto;
+    }
+    p {
+      margin-top: 16px !important;
+      font: normal normal normal 18px/20px Roboto;
+    }
+    .customCarouselButton {
+      background-color: #ffffff;
+      color: #404041;
+      border: 1px solid #404041;
+      &:active {
+        color: #fff;
+        background-color: #545b62;
+        border-color: #4e555b;
+      }
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgb(108 117 125 / 50%);
+      }
+      &:hover {
+        background-color: #ebebec;
+        color: #404041;
+        border: 1px solid #404041;
+      }
+    }
+  }
+  
+  .containerStyle {
+    padding-bottom: 50px;
+  }
+  
+  .customNavPillBar {
+    display: flex;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto auto auto auto auto;
+  }
+  
+  .customNav {
+    .customNavPill {
+      background-color: #fff ;
+      border-radius: 4px;
+    }
+    // .customNavPill {
+  
+    // }
+  }
+  
+  .contentContainer {
+    margin-top: 20px;
+    padding: 40px;
+    // margin-bottom: 50px;
+    box-shadow: 0px 3px 6px #00000029;
+    border: none !important;
+  }
+  
+  .recentlyVisitedAppsContainer {
+    margin-bottom: 0px;
+  }
+  
+  .customHeading {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: #404041;
+    margin-bottom: 24px;
+  }
+  
+  .modalHeader {
+    padding: 16px 24px;
+  }
+  
+  .modalBody {
+    padding: 16px 24px;
+    overflow-y: scroll;
+    max-height: 450px;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+      background-color: #fff;
+    }
+  
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: #0079a1;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #0079a1;
+    }
+  }
+  
+  .modalTitle {
+    font-size: 16px;
+  }
+  .groupingLinksHeading {
+    font-size: 16px;
+  }
+  
+  .groupingLinks {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+    gap: 0.3rem
+  }
+  
+  
+  // all tabs start
+  a {
+    text-decoration: none;
+  }
+  .cardOuterBody {
+    height: 120px;
+    border-radius: 4px;
+    opacity: 1;
+    margin-bottom: 24px;
+  }
+  .customImageBody {
+    height: 542px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 5px;
+    position: sticky;
+    top: 10%;
+  }
+  .cardInnerBody {
+    border: 1px solid #dfdfdf;
+    background: #ffffff 0% 0% no-repeat padding-box !important;
+  
+    h4 {
+      font: 16px/32px Roboto !important;
+      margin-bottom: 0 !important;
+    }
+    .cardImageStyle {
+      margin: 35px;
+      display: flex;
+      justify-content: center;
+    }
+    .textAndLinks {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .customTileNameHeading {
+      font: 16px/32px Roboto !important;
+      font-weight: 500 !important;
+      color: #404041 !important;
+    }
+    .links {
+      display: flex;
+      // grid-gap: 32px;
+      grid-auto-flow: column;
+    }
+    .customTileLinks {
+      font-size: 14px !important;
+      text-decoration: none;
+      color: #0079a1;
+      font-weight: 500;
+    }
+    .customTileLinks:first-child {
+      padding-right: 15px;
+    }
+  
+    a.customTileLinks:hover {
+      text-decoration: underline;
+      color: #0056b3;
+      cursor: pointer;
+    }
+    span.customTileLinks{
+      color: #404041;
+    }
+  }
+  
+  .cardInnerBody:hover {
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(219, 219, 219, 0.9);
+    -moz-box-shadow: 0px 0px 16px 0px rgba(219, 219, 219, 0.9);
+    box-shadow: 0px 0px 16px 0px rgba(219, 219, 219, 0.9);
+  }
+  
+  .cursor {
+    cursor: pointer;
+  }
+  
+  .accordion .accordion-button {
+    background: blue !important;
+  }
+  
+  // all tabs end
+  
+  // section tab starts
+  
+  .customTileHeading {
+    font: normal normal 300 38px/20px Roboto;
+    color: #404041 !important;
+    letter-spacing: 0px;
+    text-align: left;
+    line-height: 1;
+  }
+  
+  .customTileDescription {
+    color: #404041;
+    font-size: 16px !important;
+    margin: 20px 0px 12px 0px !important;
+  }
+  
+  .customTabsContainer {
+    padding: 0 !important;
+  }
+  
+  //tooltip starts
+  
+  .customOverlayToolTipBox {
+    border: transparent;
+    border-radius: 4px;
+    .customToolTipHeader {
+      background-color: #f9fafb;
+      padding: 8px 16px;
+      color: #404041;
+      border: 1px solid;
+      border-color: rgba(0,0,0,0.18);
+      border-radius: 4px;
+    
+    }
+    .popover-arrow {
+      bottom: -7px !important;
+    }
+    .customToolTip {
+      background: #ffffff;
+      border-radius: 5px;
+      opacity: 1;
+      width: 546px;
+      height: 64px;
+      padding: 12px;
+    }
+  }
+  
+  .customToolTipBox {
+    border: transparent;
+    // border-radius: 0px;
+  }
+  
+  .customToolTip {
+    background: #ffffff;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    opacity: 1;
+    width: max-content;
+    max-width: 545px;
+    height: fit-content;
+    padding: 12px;
+  }
+  
+  //all tabs tooltip start
+  .customTileToolTip {
+    background: #ffffff;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    opacity: 1;
+    padding: 12px;
+  }
+  
+  //all tabs tooltip end
+  //tooltip ends
+  
+  // cards in each section starts
+  
+  .cursor {
+    cursor: pointer;
+  }
+  
+  .showMore {
+    border: none;
+    margin-top: 10px;
+  }
+  
+  .customTabCard {
+    max-width: 268px !important;
+    min-height: 260px;
+    padding: 10px;
+    margin: 12px 10px;
+    float: left;
+    background-color: #ffffff;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    text-align: center;
+    &:hover {
+      background-color: #f9f9f9;
+      border: 1px solid #cccccc;
+    }
+    .customTileImage {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .customTileSubTitle {
+      font-weight: bold;
+      font-size: 16px;
+      color: #404041;
+      height: 48px;
+    }
+    .customTileContent {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 16px !important;
+      color: #404041;
+    }
+    .customTileContentV2 {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-size: 16px !important;
+      color: #404041;
+    }
+    .titleContentV4 {
+      font-weight: normal;
+      color: #9f9fa0;
+    }
+    .customTileContentV3 {
+      color: #9f9fa0;
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 12px;
+    }
+    .customBadgeOuterDiv {
+      display: flex;
+      z-index: 999;
+      span {
+        background-color: #eba73e;
+        color: #fff;
+      }
+    }
+    .customBadge {
+      margin-left: auto;
+    }
+    .customLinksContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // margin-bottom: 10px;
+      margin-top: 10px;
+      .customTileLinks {
+        font-weight: 500;
+      }
+    }
+  }
+  
+  .buttonStyle {
+    background-color: #0079a1;
+    color: #fff;
+    border-radius: 4px;
+    &:hover {
+      background-color: #006080;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 50%);
+    }
+    &:active {
+      color: #fff !important;
+      background-color: #0062cc !important;
+      border-color: #005cbf !important;
+    }
+    border: transparent;
+  }
+  
+  //All Popup, SectionTab Cards, Popup
+  .customTileLinks {
+    font-size: 16px !important;//03-01
+    text-decoration: none;
+    color: #0079a1;
+    // font-weight: 500;
+    margin: 0px 5px 0px 0px !important;
+  }
+  a.customTileLinks:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #0056b3;
+  }
+  span.customTileLinks{
+    color: #404041;
+  }
+  //All Popup, SectionTab Cards, Popup
+  
+  
+  
+  // @media only screen and (max-width: 1280px) {
+  //   .homePageContainer {
+  //     height: calc(100vh - 40vh);
+  //   }
+  // }
+  @media (max-width: 1600px) {
+    .homePageContainer {
+      height: calc(100vh - 50vh);
+    }
+  }
+  
+  @media (max-width: 1366px) {
+    .homePageContainer {
+      height: calc(100vh - 48vh);
+    }
+    .contentContainer {
+      padding: 30px 20px;
+    }
+    .customTabCard {
+      max-width: 249px !important;
+    }
+  }
+  
+  
+  
+  @media (min-width: 1200px) and (max-width: 1366px) {
+    .container {
+      max-width: 1220px !important;
+    }
+  }
+  
+  @media (min-width:1024px) and (max-width: 1280px) {
+    .homePageContainer {
+      height: calc(100vh - 30vh);
+    }
+  }
+  
+  @media all and (max-width: 1024px) {
+    .homePageContainer {
+      height: calc(100vh - 49vh);
+    }
+    .customImageBody {
+      height: 180px;
+      background-position: center center;
+    }
+  
+    .laptopContainer {
+      display: none;
+    }
+    .mobileContainer {
+      display: block;
+      // padding-bottom: 24px;
+      margin-bottom: 50px;
+      // background-color: #fff !important;
+    }
+    .carouselContainer {
+      width: 100% !important;
+      .carousel .slide {
+        .carousel-inner {
+          border-radius: 5px;
+        }
+      }
+    }
+  
+    .imageOne, .imageTwo, .imageThree{
+      height: 201px !important;
+      background-size: auto 200px;
+    }
+  
+    .imageThree {
+      // height: 206px !important;
+      // background-size: auto 206px;
+    }
+  
+    .imageTwo,.imageThree {
+      background-position: top center !important;
+    }
+    .customCarouselBannertxt {
+      padding: 12px;
+      padding-top: 20px;
+      h5 {
+        font: normal normal 300 32px/10px Roboto;
+        line-height: 28px;
+        font-size: 18px;
+      }
+      p {
+        margin: 10px 0 10px!important;
+        font: normal normal normal 16px/20px Roboto;
+        font-size: 12px;
+      }
+      .customCarouselButton {
+        background-color: #ebebec;
+        border: 1px solid #404041;
+        color: #404041;
+        &:hover {
+          background-color: #ebebec;
+        }
+        &:focus {
+          box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 50%);
+        }
+        // border: transparent;
+      }
+      // top: 30px;
+      // h5 {
+      //   font-size: 16px !important;
+      // }
+    }
+    .recentlyVisitedAppsContainer {
+      margin-bottom: 0px;
+      .customHeading {
+        color: #fff;
+      }
+    }
+    .customTileHeading {
+      font-size: 24px;
+      letter-spacing: 0px;
+      margin-top: 12px;
+      line-height: 1 !important;
+    }
+    .cardOuterBody {
+      min-height: 150px;
+      // height: 180px;
+      height: fit-content;
+      margin-bottom: 0px;
+      padding: 12px;
+      margin-top: 0px;
+    }
+    .selectContainer {
+      margin-bottom: 20px;
+    }
+    .mobileSection {
+      border: none !important;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+  
+    .customTabCard {
+      max-width: 100% !important;
+      margin: 8px auto;
+      min-height: 160px;
+    }
+    .cardInnerBody {
+      border: 1px solid #dfdfdf;
+      background: #ffffff 0% 0% no-repeat padding-box !important;
+      display: flex;
+      flex-direction: column !important;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      // flex-wrap: wrap;
+      text-align: center;
+      padding-bottom: 20px;
+      h4 {
+        font: 16px/32px Roboto !important;
+      }
+      .cardImageStyle {
+        margin: 20px auto 20px auto;
+        display: flex;
+        justify-content: center;
+      }
+      // for which links are not present
+      .titleMargin {
+        text-align: center;
+        margin: 0px;
+      }
+  
+      // for which links are present
+      .subTitleMargin {
+        text-align: center;
+        margin: 0px;
+      }
+      .customTileNameHeading {
+        font: 16px/32px Roboto !important;
+        font-weight: bold !important;
+        color: #404041 !important;
+        line-height: 1.5 !important;
+        // padding-top: 20px !important;
+      }
+      .links {
+        display: grid;
+        grid-gap: 20px;
+        grid-auto-flow: column;
+        margin-top: 8px;
+        justify-content: center;
+      }
+      .customTileLinks {
+        font-size: 14px !important;
+        text-decoration: none;
+        color: #0079a1;
+      }
+      a.customTileLinks:hover {
+        text-decoration: underline;
+      }
+    }
+    .customTileSubTitle {
+      height: auto;
+    }
+    .customOverlayToolTipBox {
+      display: none;
+    }
+    .tabPadding{
+      padding: 0;
+    }
+  }
+  
+  // .customNavPill {
+  //   border: 1px solid #0079a1 !important;
+  //   border-radius: 4px !important;
+  //   &.nav-link {  
+  //     background:#FFF !important;
+  //   } 
+  //   background: #fff !important;
+  //   .active {
+  //     background: #0079a1 !important
+  //   }
+  // }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .searchBar {
+      width: 100%  !important;
+    }
+    .homePageContainer {
+      height: calc(100vh - 67vh);
+    }
+    .customTabCard {
+      width: 30% !important;
+      margin: 25px 10px;
+      .customTileSubTitle {
+        line-height: 1;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    .recentlyVisitedAppsContainer {
+      .customHeading {
+        color: #404041;
+      }
+    }
+    .cardInnerBody {
+      // height: 214px !important;
+      height: 198px !important;
+      // padding-bottom: 20px;
+    }
+  }
+  .customAccordionBody {
+    padding: 5px 20px;
+  }
+  
+  .accordionItem {
+    background-color: #fff !important;
+    border-bottom: none;
+    .customAccordionHeader {
+      button {
+        padding: 5px;
+        &:focus {
+          box-shadow: none;
+          color: #404041;
+        }
+        &:not(.collapsed) {
+          background: transparent;
+          box-shadow: none;
+          color: #404041;
+        }
+      }
+      button::after {
+        margin-left: 5px !important;
+        background-size: 70%;
+        background-position: center;
+        // &:focus {
+        // }
+      }
+    }
+  }
+  
+  .accordionLink {
+    padding: 5px 0px 3px;
+    font-size: 16px !important;
+    text-decoration: none;
+    color: #0079a1;
+    &:hover {
+      color: #0056b3;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  
+  .modal
+    .modal-dialog
+    .modal-content
+    .modal-body
+    .accordion-flush
+    .accordion-item
+    .accordion-button,
+  .modal
+    .modal-dialog
+    .modal-content
+    .modal-body
+    .accordion-flush
+    .accordion-item
+    .accordion-button.collapsed {
+    background-color: blue !important;
+  }
+  
+  .modal .modal-dialog .modal-content .modal-body 
+  
+  
+  .customParentClass {
+    $midnight: #fff;
+    input {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+    // Layout
+    .row {
+      display: flex;
+      .col {
+        flex: 1;
+        &:last-child {
+          margin-left: 1em;
+        }
+      }
+    }
+    /* Accordion styles */
+    .tabs {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .tab {
+      width: 100%;
+      color: #000;
+      overflow: hidden;
+      &-label {
+        display: flex;
+  
+        padding: 1em;
+        background: $midnight;
+        font-weight: bold;
+        cursor: pointer;
+        /* Icon */
+        &:hover {
+          background: darken($midnight, 10%);
+        }
+        &::after {
+          content: "\276F";
+          width: 1em;
+          height: 1em;
+          text-align: center;
+          transition: all 0.35s;
+        }
+      }
+      &-content {
+        max-height: 0;
+        padding: 0 1em;
+        color: #000;
+        background: white;
+        transition: all 0.35s;
+      }
+      &-close {
+        display: flex;
+        justify-content: flex-end;
+        padding: 1em;
+        font-size: 0.75em;
+        background: $midnight;
+        cursor: pointer;
+        &:hover {
+          background: darken($midnight, 10%);
+        }
+      }
+    }
+  
+    // :checked
+    input:checked {
+      + .tab-label {
+        background: darken($midnight, 10%);
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
+      ~ .tab-content {
+        max-height: 100vh;
+        padding: 1em;
+      }
+    }
+  }
+  
+  @media (max-width:500px) {
+    .customTileSubTitle {
+      height: auto !important;
+    }
+  }
+  
+  .popupContent{
+    color:#404041;
+    a{
+      color:#0079a1;
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .searchBar {
+      width: 100%;
+      color: #fff;
+    }
+    .modalBody {
+      max-height: 300px;
+    }
+    .customTabCard{
+      width: 47% !important;
+      margin: 10px 10px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .customTabCard{
+      width: 47% !important;
+      margin: 10px 10px;
+    }
+  
+  }
+  
+  @media (min-width:1024px) and (max-width: 1280px) {
+    .modalBody {
+      max-height: 300px;
+    }
+  
+  }
+  
+  @media all and (min-width: 1281px) {
+    .modalBody {
+      max-height: 420px;
+    }
+  }
+  
+  .popupAccItem{
+    border: 1px solid #DFDFDF;
+    background: #F5F5F5;
+  }
+  
+  .popupAccHead button{
+    background: #F5F5F5;
+    padding: 10px;
+    color: #404041 !important;
+    font-weight: 500;
+    box-shadow: none !important;
+  }
+  
+  .popupAccHead button:focus{
+    border: none;
+    box-shadow: none;
+    background: #F5F5F5;
+  }
+  
+  .popupAccBody{
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    color: #404041;
+  }
+  
+  .popupAccBody a{
+    color: #0079a1;
+    font-weight: 500;
+  }
+  
+  .cursorPointer{
+    cursor: pointer;
+  }
+  
+  .homePageWrapper{
+    overflow: auto;
+    height: 100vh;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #fff;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #5876aa;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5876aa;
+  }
+  
+  ::-moz-scrollbar {
+    width: 5px;
+  }
+  
+  ::-moz-scrollbar-track {
+    box-shadow: inset 0 0 5px #fff;
+    border-radius: 10px;
+  }
+  
+  ::-moz-scrollbar-thumb {
+    background: #5876aa;
+    border-radius: 10px;
+  }
+  
+  ::-moz-scrollbar-thumb:hover {
+    background: #5876aa;
+  }
+  
+  .scrollbar-track.fade {
+    opacity: 1 !important;
+  }
+  .customLinksContainer{
+    padding: 5px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .tabView{
+      display: none;
+    }
+    .textAndLinks {
+      width: 91.66666667%;
+    }
+    .searchBar{
+      width: 100% !important;
+    }
+  }
+  
+  
+  // Search Bar Input
+  
+  .searchInput{
+    position: relative;
+    input[type="search"]::placeholder:after {
+      content: "";
+      background-image: url("../icons/search.svg");
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background-repeat: no-repeat;
+    }
+  // &::after{
+  //   content: "";
+  //   background-image: url("../icons/search.svg");
+  //   width: 24px;
+  //   height: 24px;
+  //   position: absolute;
+  //   right: 10px;
+  //   top: 10px;
+  //   background-repeat: no-repeat;
+  // }
+  .searchBar {
+    width: 30%;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    color: #404041;
+    border: none;
+    padding: 10px;
+    position: relative;
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+  }
+  
+  input[type="search"] {
+    content: "";
+    background-image: url("../icons/search.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  
+  input[type="search"]::-webkit-search-cancel-button{
+    display: none;
+  }
+  
+  //external page
+  .externalContentContainer {
+    margin-top: 20px;
+    padding: 40px; 
+    // margin-bottom: 50px;  
+    box-shadow: 0px 3px 6px #00000029;
+    border: none !important;
+    height: calc(100vh - 15vh);
+  }
+  
+  // no products
+  .noProducts {
+    font-size: 16px;
+    color: #666667;
+    text-align: center;
+  }
+
+  .layoutContent {
+    padding: 16px;
+  }
+
+  body {
+    overflow-y: hidden;
+  }
+  

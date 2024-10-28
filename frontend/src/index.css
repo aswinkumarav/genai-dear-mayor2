@@ -1,0 +1,85 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*
+  Tailwind
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Defaults
+*/
+@layer base {
+  :root {
+    /* BG */
+    --default-white: #ffffff;
+    /* default-bg */
+    --default-dark: #1a1b1e;
+    --default-dark-inverse: #2a2a32;
+    /* dark-bg, bg-inverse */
+    --default-bg-secondary: #efeff0;
+    /* secondary-bg */
+
+    /* TEXT-color */
+    --text-secondary: #4b4d57;
+    /* text-secondary */
+    --text-dark-secondary: #fafafa;
+    /* text-dark-secondary */
+    --text-secondary-inverse: #e4e5e7;
+    /* text-secondary-inverse */
+
+    /*BUTTON-color*/
+    --interactive-primary: #1e5af2;
+    /* interactive-primary, brand-blue */
+    --interactive-primary-hover: #0a37aa;
+    /* interactive-primary-hover */
+    --interactive-primary-dark: #4d7cf5;
+    /* interactive-primary in dark mode */
+    --interactive-secondary: #efeff0;
+    --interactive-tertiary: #2a2a32;
+    --interactive-tertiary-dark: #4b4d57;
+    --interactive-enabled: #ffcc2d;
+    /* brand-yellow */
+    --interactive-disabled: #9498a1;
+    --interactive-disabled-low: #e4e5e7;
+  }
+}
+
+/*
+  Custom
+*/
+#root {
+  background-image: url('./assets/dot.png');
+  background-repeat: repeat;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #efeff0;
+  border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #2a2a32;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9498a1;
+  border-radius: 5px;
+}

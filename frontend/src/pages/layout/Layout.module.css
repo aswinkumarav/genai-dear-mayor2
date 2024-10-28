@@ -1,0 +1,127 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    background-color: #fafafa;
+    margin: 5px 0 5px 0;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.headerTitleContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    text-decoration: none;
+    line-height: 10px;
+}
+
+.usecaseParentTitle {
+    color: #000;
+    margin-left: 6px;
+    display: flex;
+}
+
+.usecaseTitle {
+    margin-left: 5px;
+    margin-top: 3px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.headerTitle {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: flex-end;
+    color: #242424;
+    margin-top: 4px;
+}
+
+.headerIcon {
+    height: 48px;
+    width: auto;
+    margin-left: 22px;
+}
+
+.shareButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.shareButton {
+    color: #FFFFFF;
+}
+
+.shareButtonText {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.urlTextBox {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #707070;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+}
+
+.copyButtonContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 12px;
+    gap: 4px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+}
+
+.copyButtonContainer:hover {
+    cursor: pointer;
+    background: #D1D1D1;
+}
+
+.copyButton {
+    color: #424242;
+}
+
+.copyButtonText {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #242424;
+}
+
+@media (max-width: 480px) {
+    .headerTitleContainer {
+        margin-left: 4px;
+    }
+
+    .headerIcon {
+        margin-left: 26px;
+    }
+}

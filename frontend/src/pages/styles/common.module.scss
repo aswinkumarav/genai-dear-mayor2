@@ -1,0 +1,94 @@
+.headerMenu {
+  background: #5876aa;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 52px;
+  border-bottom: 1px solid #c5c5c5;
+}
+
+
+.headerItems {
+  right: 0;
+  position: fixed;
+  margin: 0px 22px 0px 0px;
+  font-size: 35px;
+  cursor: pointer;
+  font-size: 1.4rem !important;
+}
+
+.headerIcon {
+  margin-left: 12px;
+  color: white;
+  font-size: 23px;
+}
+
+.portalName {
+  font-size: 18px !important;
+  font-weight: 400;
+  margin-left: 14px;
+  color: #fff;
+}
+
+.landingPageCard {
+  min-height: calc(100vh - 40vh);
+  // min-height: 63vh;
+  margin-bottom: 14vh;
+}
+
+.landingPageChildCard {
+  min-height: 13vh;
+  border: 1px solid #ebebeb !important;
+  cursor: pointer;
+}
+
+.landingPageChildCard:hover {
+  box-shadow: 0 0 16px 0 hsla(0,0%,86%);
+}
+
+
+.cardBodyTile {
+  font-weight: 500;
+  padding-left: 18px;
+}
+
+.chatBoxContainer {
+  background-color: #5876aa;
+  color: #ffffff;
+  padding: 10px;
+  display: flex;
+  height: 52px;
+  align-items: center
+}
+
+.customNavPillBar {
+  display: flex;
+  grid-column-gap: 10px;
+  grid-template-columns: auto auto auto auto auto auto;
+  margin-bottom: 5vh;
+}
+
+.customNav {
+  .customNavPill {
+    background-color: #fff;
+    color: #482367;
+    border-radius: 4px;
+  }
+}
+
+.navActive {
+  background-color: #482367 !important;
+  color: #fff !important;
+}
+
+.nav-link {
+  color: #482367 !important;
+}
+
+.pageLoader {
+  top: 40%;
+  position: absolute;
+  left: 50%;
+  color: #5876aa;
+  border-width: 3px !important;
+}

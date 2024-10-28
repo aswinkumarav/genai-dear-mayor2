@@ -1,0 +1,196 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  background-color: #5876aa;
+  height: 58px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.headerTitleContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+  text-decoration: none;
+}
+
+.headerTitle {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+}
+
+.headerIcon {
+  max-height: 45px;
+  width: 48px;
+  margin-left: 12px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.productName {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;   
+}
+
+.useCaseName { 
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: -5px;
+  margin-top: -5px;
+}
+
+.logo {
+  height: 60px !important;
+}
+
+.parentHeader {
+  background: linear-gradient(270deg, #49046f -1.42%, #e31628 47.73%, #ffa100);
+  border-bottom: 1px solid;
+  border-image: linear-gradient(270deg, #49046f -1.42%, #e31628 47.73%, #ffa100);
+  /* height: 60.5px; */
+}
+
+.shareButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 12px;
+  gap: 4px;
+  width: 86px;
+  height: 32px;
+  background: rgb(255, 255, 255) !important;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.shareButton {
+  color: #FFFFFF;
+}
+
+.shareButtonText {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.urlTextBox {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #707070;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+}
+
+.copyButtonContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 12px;
+  gap: 4px;
+  background: #FFFFFF;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+}
+
+.copyButtonContainer:hover {
+  cursor: pointer;
+  background: #D1D1D1;
+}
+
+.copyButton {
+  color: #424242;
+}
+
+.copyButtonText {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #242424;
+}
+
+.infoIcon {
+  margin: 4px 5px;
+  cursor: pointer;
+}
+
+.popoverContainer {
+  background: #f3f3f3;
+  padding: 0px 5px 5px 10px;
+  border-radius: 5px;
+  max-height: 21rem;
+  overflow-y: scroll;
+  width: 30%;
+  min-width: 30%;
+  z-index: 9999 !important;
+}
+
+.folderListClose {
+  right: 7px;
+  position: absolute;
+  cursor: pointer;
+  /* margin-top: 5px; */
+}
+
+.protectBtn {
+  background: transparent !important;
+  margin-left: 0px !important;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 32px;
+}
+
+.protectBtn:hover {
+  background: #f0f0f0 !important;
+}
+
+.protected {
+  display: flex !important;
+  margin-top: 4px 4px;
+  line-height: 20px;
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+}
+
+.falink {
+  margin: 5px 10px 0 0;
+  cursor: pointer;
+}
+
+.customParentHeader {
+  background: #550569 !important;
+}
