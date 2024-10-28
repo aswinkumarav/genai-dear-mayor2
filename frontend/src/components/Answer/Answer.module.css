@@ -213,6 +213,10 @@ sup {
 
 .citationLink {
     cursor: pointer;
+    color: #000;
+}
+
+.citationLink:hover {
+    color: #2f7cfc;
     text-decoration: underline;
-    color: #5787a4;
 }
