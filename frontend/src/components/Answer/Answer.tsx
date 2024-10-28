@@ -219,14 +219,15 @@ export const Answer = ({
                 <div className="flex flex-col gap-2">
                     <div className="content">
                         <ReactMarkdown
+                            className={styles.answerText}
                             remarkPlugins={[remarkGfm, supersub]}
-                            rehypePlugins={[rehypeRaw]}
+                            // rehypePlugins={[rehypeRaw]}
                             children={SANITIZE_ANSWER
                                 ? DOMPurify.sanitize(parsedAnswer.markdownFormatText, {
                                     ALLOWED_TAGS: XSSAllowTags,
                                     ALLOWED_ATTR: XSSAllowAttributes,
                                   })
-                                : parsedAnswer.markdownFormatText.replace(/(\d+\.)\s+/g, '$1').replace(/\n(?!\n)/g, '\n\n ')}
+                                : parsedAnswer.markdownFormatText.replace(/(\d+\.)\s+/g, '$1 ').replace(/(?<!\n)\n(?!\n)/g, '\n\n').trim()}
                         />
                     </div>
                     {!!parsedAnswer.citations.length && (

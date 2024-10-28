@@ -22,8 +22,9 @@
     margin: 11px; */
     white-space: normal;
     word-wrap: break-word;
-    /* max-width: 800px;
-    overflow-x: auto; */
+    max-width: 800px;
+    overflow-x: auto;
+    white-space: 'pre-wrap';
 }
 
 .answerHeader {
