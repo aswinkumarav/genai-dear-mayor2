@@ -15,13 +15,14 @@ import supersub from 'remark-supersub'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { ThumbDislike20Filled, ThumbLike20Filled } from "@fluentui/react-icons";
-import { XSSAllowTags } from "../../constants/xssAllowTags";
+import { XSSAllowTags, XSSAllowAttributes } from "../../constants/xssAllowTags";
 import { BsFolderSymlink } from "react-icons/bs";
 import LaunchChatAva from '../../assets/launch-chat-avatar.svg?react';
 import CaretDown from '../../assets/i-caret-down.svg?react';
 import IconButton from "../IconButton/IconButton";
 import ThumbsDown from '../../assets/i-thumbs-down.svg?react';
 import ThumbUp from '../../assets/i-thumbs-up.svg?react';
+import rehypeRaw from "rehype-raw";
 
 interface Props {
     answer: AskResponse;
@@ -217,13 +218,16 @@ export const Answer = ({
                 </div>
                 <div className="flex flex-col gap-2">
                     <div className="content">
-                    <ReactMarkdown
-                                linkTarget="_blank"
-                                remarkPlugins={[remarkGfm, supersub]}
-                                children={SANITIZE_ANSWER ? DOMPurify.sanitize(parsedAnswer.markdownFormatText, { ALLOWED_TAGS: XSSAllowTags }) : parsedAnswer.markdownFormatText}
-                                className={styles.answerText}
-                                components={components}
-                            />
+                        <ReactMarkdown
+                            remarkPlugins={[remarkGfm, supersub]}
+                            rehypePlugins={[rehypeRaw]}
+                            children={SANITIZE_ANSWER
+                                ? DOMPurify.sanitize(parsedAnswer.markdownFormatText, {
+                                    ALLOWED_TAGS: XSSAllowTags,
+                                    ALLOWED_ATTR: XSSAllowAttributes,
+                                  })
+                                : parsedAnswer.markdownFormatText.replace(/(\d+\.)\s+/g, '$1').replace(/\n(?!\n)/g, '\n\n ')}
+                        />
                     </div>
                     {!!parsedAnswer.citations.length && (
                         <div className={`resources flex flex-col gap-2.5 transition-opacity duration-1000 ${!isLoading ? 'opacity-100 h-auto overflow-auto' : 'opacity-0 h-0 overflow-hidden'}`}>

@@ -45,6 +45,6 @@ export function parseAnswer(answer: AskResponse): ParsedAnswer {
 
     return {
         citations: filteredCitations,
-        markdownFormatText: answerText
+        markdownFormatText: "The retrieved documents do not provide a specific count of city officials. However, they do list various categories of officials and entities that are considered part of the City and County of San Francisco's governance structure. These include:\n\n1. Officers elected by vote of the people.\n2. Members of the Board of Education.\n3. Members of boards and commissions appointed by the Mayor and the Board of Supervisors.\n4.Members of specific commissions such as the Building Inspection Commission, Ethics Commission, Elections Commission, Retirement Board, Health Service Board, Retiree Health Care Trust Fund Board, Sunshine Ordinance Task Force, Youth Commission, Small Business Commission, and Board of Law Library Trustees.\n5. The Superintendent of Schools.\n 6. The executive appointed as the chief executive officer under each board or commission.\n 7.The Controller.\n8. The City Administrator.\n9.The head of each department under the Mayor.\n10. Other officers as may be provided by law or designated by ordinance [doc1].\n\nFor a precise count, one would need to tally the individuals in each of these categories, which is not provided in the documents."
     };
 }
