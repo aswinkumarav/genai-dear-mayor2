@@ -747,7 +747,7 @@ const Chat = () => {
                                         )}
                                     </>
                                 ))}
-                                {showLoadingMessage && (
+                                {(showLoadingMessage && isLoading) && (
                                     <>
                                         <div className="flex gap-4 min-w-[292px] max-w-[720px] rounded-3xl bg-transparent p-2 md:py-3 md:px-6">
                                             <div className="fill-black">
@@ -755,7 +755,7 @@ const Chat = () => {
                                             </div>
                                             <div className="flex flex-col gap-2">
                                                 <ReactTyped
-                                                    strings={['Thinking...']}
+                                                    strings={['Generating Answer...']}
                                                     typeSpeed={40}
                                                     backSpeed={80}
                                                     backDelay={2000}

@@ -23,11 +23,12 @@ import IconButton from "../IconButton/IconButton";
 import ThumbsDown from '../../assets/i-thumbs-down.svg?react';
 import ThumbUp from '../../assets/i-thumbs-up.svg?react';
 import rehypeRaw from "rehype-raw";
+import { ReactTyped } from "react-typed";
 
 interface Props {
     answer: AskResponse;
     onCitationClicked: (citedDocument: Citation) => void;
-    isLoading: boolean | undefined
+    isLoading: boolean | undefined;
 }
 
 export const Answer = ({
@@ -55,6 +56,8 @@ export const Answer = ({
     const appStateContext = useContext(AppStateContext)
     const FEEDBACK_ENABLED = appStateContext?.state.frontendSettings?.feedback_enabled && appStateContext?.state.isCosmosDBAvailable?.cosmosDB;
     const SANITIZE_ANSWER = appStateContext?.state.frontendSettings?.sanitize_answer
+    const [isAnswerTypingComplete, setIsAnswerTypingComplete] = useState(false);
+
 
     const handleChevronClick = () => {
         setChevronIsExpanded(!chevronIsExpanded);
@@ -218,19 +221,37 @@ export const Answer = ({
                 </div>
                 <div className="flex flex-col gap-2">
                     <div className="content">
-                        <ReactMarkdown
-                            className={styles.answerText}
-                            remarkPlugins={[remarkGfm, supersub]}
-                            // rehypePlugins={[rehypeRaw]}
-                            children={SANITIZE_ANSWER
-                                ? DOMPurify.sanitize(parsedAnswer.markdownFormatText, {
-                                    ALLOWED_TAGS: XSSAllowTags,
-                                    ALLOWED_ATTR: XSSAllowAttributes,
-                                  })
-                                : parsedAnswer.markdownFormatText.replace(/(\d+\.)\s+/g, '$1 ').replace(/(?<!\n)\n(?!\n)/g, '\n\n').trim()}
-                        />
+                        {!isLoading && !isAnswerTypingComplete && (
+                            <ReactTyped
+                                strings={[SANITIZE_ANSWER
+                                    ? DOMPurify.sanitize(parsedAnswer.markdownFormatText, {
+                                        ALLOWED_TAGS: XSSAllowTags,
+                                        ALLOWED_ATTR: XSSAllowAttributes,
+                                    })
+                                    : parsedAnswer.markdownFormatText.replace(/(\d+\.)\s+/g, '$1 ').replace(/(?<!\n)\n(?!\n)/g, '\n\n').trim()]}
+                                typeSpeed={1}
+                                backSpeed={1050}
+                                loop={false}
+                                showCursor={false}
+                                onComplete={() => setIsAnswerTypingComplete(true)}
+                            />
+                        )}
+                        {isAnswerTypingComplete && (
+                            <ReactMarkdown
+                                className={styles.answerText}
+                                remarkPlugins={[remarkGfm, supersub]}
+                                //   rehypePlugins={[rehypeRaw]}
+                                children={SANITIZE_ANSWER
+                                    ? DOMPurify.sanitize(parsedAnswer.markdownFormatText, {
+                                        ALLOWED_TAGS: XSSAllowTags,
+                                        ALLOWED_ATTR: XSSAllowAttributes,
+                                    })
+                                    : parsedAnswer.markdownFormatText.replace(/(\d+\.)\s+/g, '$1 ').replace(/(?<!\n)\n(?!\n)/g, '\n\n').trim()}
+                            />
+                        )}
+
                     </div>
-                    {!!parsedAnswer.citations.length && (
+                    {!!parsedAnswer.citations.length && isAnswerTypingComplete && (
                         <div className={`resources flex flex-col gap-2.5 transition-opacity duration-1000 ${!isLoading ? 'opacity-100 h-auto overflow-auto' : 'opacity-0 h-0 overflow-hidden'}`}>
                             <div>
                                 {parsedAnswer.citations.length <= 2 ? (
