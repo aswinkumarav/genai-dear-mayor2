@@ -221,3 +221,29 @@ sup {
     color: #2f7cfc;
     text-decoration: underline;
 }
+
+/* React Markdown - Answer Styles*/
+.markdown {
+}
+
+.markdown ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  list-style: disc outside none;
+}
+
+.markdown ul li {
+  margin-left: 0.5em;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+.markdown p {
+  font-size: inherit;
+  font-weight: inherit;
+  white-space: pre-wrap;
+}
+
+.markdown ol {
+  list-style: decimal;
+  padding-left: 1rem;
+}

@@ -228,7 +228,7 @@ export const Answer = ({
                                         ALLOWED_TAGS: XSSAllowTags,
                                         ALLOWED_ATTR: XSSAllowAttributes,
                                     })
-                                    : parsedAnswer.markdownFormatText.replace(/(\d+\.)\s+/g, '$1 ').replace(/(?<!\n)\n(?!\n)/g, '\n\n').trim()]}
+                                    : parsedAnswer.markdownFormatText]}
                                 typeSpeed={1}
                                 backSpeed={1050}
                                 loop={false}
@@ -238,16 +238,15 @@ export const Answer = ({
                         )}
                         {isAnswerTypingComplete && (
                             <ReactMarkdown
-                                className={styles.answerText}
-                                remarkPlugins={[remarkGfm, supersub]}
-                                //   rehypePlugins={[rehypeRaw]}
-                                children={SANITIZE_ANSWER
-                                    ? DOMPurify.sanitize(parsedAnswer.markdownFormatText, {
-                                        ALLOWED_TAGS: XSSAllowTags,
-                                        ALLOWED_ATTR: XSSAllowAttributes,
-                                    })
-                                    : parsedAnswer.markdownFormatText.replace(/(\d+\.)\s+/g, '$1 ').replace(/(?<!\n)\n(?!\n)/g, '\n\n').trim()}
-                            />
+                            remarkPlugins={[remarkGfm, supersub]}
+                            className={styles.markdown}
+                            children={SANITIZE_ANSWER
+                                ? DOMPurify.sanitize(parsedAnswer.markdownFormatText, {
+                                    ALLOWED_TAGS: XSSAllowTags,
+                                    ALLOWED_ATTR: XSSAllowAttributes,
+                                })
+                                : parsedAnswer.markdownFormatText}
+                          />
                         )}
 
                     </div>
