@@ -213,6 +213,17 @@ export const Answer = ({
             );
         },
     };
+
+    function escapeHTML(html: string) {
+        return html
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;")
+          .replace(/\n/g, "<br />");
+      }
+
     return (
         <>
             <div className="flex gap-4 min-w-[292px] max-w-[720px] rounded-3xl bg-transparent p-2 md:py-3 md:px-6">
@@ -228,7 +239,7 @@ export const Answer = ({
                                         ALLOWED_TAGS: XSSAllowTags,
                                         ALLOWED_ATTR: XSSAllowAttributes,
                                     })
-                                    : parsedAnswer.markdownFormatText]}
+                                    : escapeHTML(parsedAnswer.markdownFormatText)]}
                                 typeSpeed={1}
                                 backSpeed={1050}
                                 loop={false}
