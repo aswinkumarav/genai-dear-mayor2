@@ -10,8 +10,8 @@
 }
 
 .answerText {
-    /* font-style: normal; */
-    /* font-weight: 400;
+    font-style: normal;
+    font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #323130;
@@ -19,12 +19,11 @@
     order: 1;
     align-self: stretch;
     flex-grow: 0;
-    margin: 11px; */
+    margin: 11px;
     white-space: normal;
     word-wrap: break-word;
     max-width: 800px;
     overflow-x: auto;
-    white-space: 'pre-wrap';
 }
 
 .answerHeader {
@@ -111,9 +110,6 @@
     text-align: center;
     color: #424242;
     cursor: pointer;
-    margin-left: 18px;
-    margin-right: 8px;
-    margin-top: 5px;
 }
 
 .citation:hover {
@@ -209,41 +205,4 @@ sup {
     color: black;
     height: 16px;
     margin-left: 5px;
-    margin-top: 5px;
-}
-
-.citationLink {
-    cursor: pointer;
-    color: #000;
-}
-
-.citationLink:hover {
-    color: #2f7cfc;
-    text-decoration: underline;
-}
-
-/* React Markdown - Answer Styles*/
-.markdown {
-}
-
-.markdown ul {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  list-style: disc outside none;
-}
-
-.markdown ul li {
-  margin-left: 0.5em;
-  display: list-item;
-  text-align: -webkit-match-parent;
-}
-.markdown p {
-  font-size: inherit;
-  font-weight: inherit;
-  white-space: pre-wrap;
-}
-
-.markdown ol {
-  list-style: decimal;
-  padding-left: 1rem;
 }

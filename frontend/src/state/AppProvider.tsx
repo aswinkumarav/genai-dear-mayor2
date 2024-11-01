@@ -1,11 +1,9 @@
 import React, { createContext, useReducer, ReactNode, useEffect } from 'react';
 import { appStateReducer } from './AppReducer';
-import { Conversation, ChatHistoryLoadingState, CosmosDBHealth, historyList, historyEnsure, CosmosDBStatus, frontendSettings, FrontendSettings, Feedback, Citation } from '../api';
+import { Conversation, ChatHistoryLoadingState, CosmosDBHealth, historyList, historyEnsure, CosmosDBStatus, frontendSettings, FrontendSettings, Feedback } from '../api';
   
 export interface AppState {
     isChatHistoryOpen: boolean;
-    isCitaionOpen: boolean;
-    citationMessage: string | any;
     chatHistoryLoadingState: ChatHistoryLoadingState;
     isCosmosDBAvailable: CosmosDBHealth;
     chatHistory: Conversation[] | null;
@@ -17,8 +15,6 @@ export interface AppState {
 
 export type Action =
     | { type: 'TOGGLE_CHAT_HISTORY' }
-    | { type: 'TOGGLE_CITATION', payload: boolean }
-    | { type: 'SET_CITATION_MESSAGE', payload: Citation | undefined }
     | { type: 'SET_COSMOSDB_STATUS', payload: CosmosDBHealth }
     | { type: 'UPDATE_CHAT_HISTORY_LOADING_STATE', payload: ChatHistoryLoadingState }
     | { type: 'UPDATE_CURRENT_CHAT', payload: Conversation | null }
@@ -35,8 +31,6 @@ export type Action =
 
 const initialState: AppState = {
     isChatHistoryOpen: false,
-    isCitaionOpen: false,
-    citationMessage: "",
     chatHistoryLoadingState: ChatHistoryLoadingState.Loading,
     chatHistory: null,
     filteredChatHistory: null,

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { Card, Row, Carousel } from "react-bootstrap";
 import { AiFillWechat } from "react-icons/ai";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import { getUseCaseList, getUserInfo } from "../../api";

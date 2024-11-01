@@ -9,9 +9,6 @@ import { useBoolean } from '@fluentui/react-hooks';
 import { Conversation } from '../../api/models';
 import { historyDelete, historyRename, historyList } from '../../api';
 import { useEffect, useRef, useState, useContext } from 'react';
-import { ListItemWithIcon } from '../../types/common';
-import Delete from '../../assets/i-delete.svg?react';
-import Pen from '../../assets/i-pen.svg?react';
 
 interface ChatHistoryListItemCellProps {
   item?: Conversation;
@@ -169,7 +166,7 @@ export const ChatHistoryListItemCell: React.FC<ChatHistoryListItemCellProps> = (
             key={item.id}
             tabIndex={0}
             aria-label='chat history item'
-            className={`${styles.itemCell} items-center rounded-lg py-3 px-3 group cursor-pointer hover:bg-interactive-secondary dark:hover:bg-interactive-tertiary`}
+            className={styles.itemCell}
             onClick={() => handleSelectItem()}
             onKeyDown={e => e.key === "Enter" || e.key === " " ? handleSelectItem() : null}
             verticalAlign='center'
@@ -178,10 +175,9 @@ export const ChatHistoryListItemCell: React.FC<ChatHistoryListItemCellProps> = (
             onMouseLeave={() => setIsHovered(false)}
             styles={{
                 root: {
-                    backgroundColor: 'transparent',
+                    backgroundColor: isSelected ? '#e6e6e6' : 'transparent',
                 }
             }}
-            
         >
             {edit ? <>
                 <Stack.Item 
@@ -247,20 +243,6 @@ export const ChatHistoryListItemCell: React.FC<ChatHistoryListItemCellProps> = (
     );
 };
 
-const listItems: ListItemWithIcon[] = [
-
-    {
-      icon: <Pen />,
-      label: 'Edit Name',
-      action: () => {},
-    },
-    {
-      icon: <Delete />,
-      label: 'Delete',
-      action: () => {},
-    },
-  ];
-
 export const ChatHistoryListItemGroups: React.FC<ChatHistoryListItemGroupsProps> = ({ groupedChatHistory }) => {
     const appStateContext = useContext(AppStateContext);
     const observerTarget = useRef(null);
@@ -324,39 +306,24 @@ export const ChatHistoryListItemGroups: React.FC<ChatHistoryListItemGroupsProps>
     }, [observerTarget]);
 
   return (
-    <ul className="pt-2 h-[calc(100vh-150px)] overflow-y-auto overflow-x-hidden">
-      {groupedChatHistory.map((item, index) => (
-        <li key={index}>
-          <span className="text-sm font-bold font-impact">{item.month}</span>
-          <ul className="py-4 w-[260px]">
-                  {item.entries.map((historyItem, i) => (
-                      onRenderCell(historyItem)
-                  ))}
-          </ul>
-        </li>
+    <div className={styles.listContainer} data-is-scrollable>
+      {groupedChatHistory.map((group) => (
+        group.entries.length > 0 && <Stack horizontalAlign="start" verticalAlign="center" key={group.month} className={styles.chatGroup} aria-label={`chat history group: ${group.month}`}>
+          <Stack aria-label={group.month} className={styles.chatMonth}>{formatMonth(group.month)}</Stack>
+          <List aria-label={`chat history list`} items={group.entries} onRenderCell={onRenderCell} className={styles.chatList}/>
+          <div ref={observerTarget} />
+          <Separator styles={{
+            root: {
+                width: '100%',
+                position: 'relative',
+                '::before': {
+                  backgroundColor: '#d6d6d6',
+                },
+              },
+          }}/>
+        </Stack>
       ))}
-    </ul>
-
-
-
-    // <div className={styles.listContainer} data-is-scrollable>
-    //   {groupedChatHistory.map((group) => (
-    //     group.entries.length > 0 && <Stack horizontalAlign="start" verticalAlign="center" key={group.month} className={styles.chatGroup} aria-label={`chat history group: ${group.month}`}>
-    //       <Stack aria-label={group.month} className={styles.chatMonth}>{formatMonth(group.month)}</Stack>
-    //       <List aria-label={`chat history list`} items={group.entries} onRenderCell={onRenderCell} className={styles.chatList}/>
-    //       <div ref={observerTarget} />
-    //       <Separator styles={{
-    //         root: {
-    //             width: '100%',
-    //             position: 'relative',
-    //             '::before': {
-    //               backgroundColor: '#d6d6d6',
-    //             },
-    //           },
-    //       }}/>
-    //     </Stack>
-    //   ))}
-    //   {showSpinner && <div className={styles.spinnerContainer}><Spinner size={SpinnerSize.small} aria-label="loading more chat history" className={styles.spinner}/></div>}
-    // </div>
+      {showSpinner && <div className={styles.spinnerContainer}><Spinner size={SpinnerSize.small} aria-label="loading more chat history" className={styles.spinner}/></div>}
+    </div>
   );
 };
